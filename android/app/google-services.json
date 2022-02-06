@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "555289903220",
+    "project_id": "openponic-mvp",
+    "storage_bucket": "openponic-mvp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555289903220:android:1ffc128e8b174b1cc59121",
+        "android_client_info": {
+          "package_name": "br.dev.yago.openponic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555289903220-00v7btcrtgblimt4b8gmj4v7ckv014i8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh2INViHJh0_YgXS2StTXpz9oo2nHyZcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555289903220-00v7btcrtgblimt4b8gmj4v7ckv014i8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
