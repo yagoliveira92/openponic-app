@@ -40,13 +40,13 @@ dependencies:
   firebase_database: ^9.0.6
   firebase_auth: ^3.3.7
   flutter_bloc: ^8.0.1
-  get_it: ^7.2.0
   fl_chart: ^0.45.0
-  isar: ^2.1.4
-  isar_flutter_libs: ^2.1.4
+  isar: ^2.2.1
+  isar_flutter_libs: ^2.2.1
+  flutter_riverpod: ^1.0.3
 
 dev_dependencies:
-  isar_generator: 2.1.4
+  isar_generator: ^2.2.1
   build_runner: any
   flutter_test:
     sdk: flutter
