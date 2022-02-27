@@ -1,9 +1,9 @@
 import 'package:app_openponic/common/openponic_color.dart';
+import 'package:app_openponic/features/home/pages/initial_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'features/home/pages/home_page_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'AntipastoPro',
         backgroundColor: Colors.white,
       ),
-      home: const HomePageScreen(),
+      home: const InitialScreen(),
     );
   }
 }

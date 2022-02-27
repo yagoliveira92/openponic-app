@@ -1,4 +1,4 @@
-import 'package:app_openponic/features/home/controller/home_controller_state.dart';
+import 'package:app_openponic/features/home/controller/home/home_controller_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeController extends StateNotifier<HomeControllerState> {

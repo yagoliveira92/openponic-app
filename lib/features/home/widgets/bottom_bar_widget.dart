@@ -1,34 +1,47 @@
 import 'package:flutter/material.dart';
 
 class BottomBarWidget extends StatelessWidget {
-  const BottomBarWidget({Key? key}) : super(key: key);
+  const BottomBarWidget({
+    required this.changeIndex,
+    required this.currentIndex,
+    Key? key,
+  }) : super(key: key);
+
+  final Function(int index) changeIndex;
+  final int currentIndex;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      items: const [
+      iconSize: 32.0,
+      selectedItemColor: Colors.green,
+      onTap: changeIndex,
+      currentIndex: currentIndex,
+      items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.thermostat_outlined,
-            size: 35,
+          backgroundColor: Colors.green,
+          icon: Padding(
+            padding: EdgeInsets.only(left: 8.0, right: 8.0),
+            child: Icon(
+              Icons.ac_unit_outlined,
+            ),
           ),
-          label: 'Tempo',
+          label: 'Previsão',
+        ),
+        BottomNavigationBarItem(
+          icon: Padding(
+            padding: EdgeInsets.only(left: 8.0, right: 8.0),
+            child: Icon(
+              Icons.home,
+            ),
+          ),
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.home,
-            size: 35,
+            Icons.menu,
           ),
-          label: 'Início',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.info,
-            size: 35,
-          ),
-          label: 'Sobre',
+          label: 'Menu',
         ),
       ],
     );
