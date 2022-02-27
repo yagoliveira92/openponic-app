@@ -14,7 +14,7 @@ class GridCardsHomeWidget extends StatelessWidget {
       crossAxisCount: 2,
       children: <Widget>[
         Card(
-          elevation: 10,
+          elevation: 5,
           child: Container(
             padding: const EdgeInsets.all(12.0),
             child: Column(
@@ -72,7 +72,7 @@ class GridCardsHomeWidget extends StatelessWidget {
           ),
         ),
         Card(
-          elevation: 10,
+          elevation: 5,
           child: Container(
             padding: const EdgeInsets.all(12.0),
             child: Column(
@@ -130,7 +130,7 @@ class GridCardsHomeWidget extends StatelessWidget {
           ),
         ),
         Card(
-          elevation: 10,
+          elevation: 5,
           child: Container(
             padding: const EdgeInsets.all(12.0),
             child: Column(
@@ -188,7 +188,7 @@ class GridCardsHomeWidget extends StatelessWidget {
           ),
         ),
         Card(
-          elevation: 10,
+          elevation: 5,
           child: Container(
             padding: const EdgeInsets.all(12.0),
             child: Column(

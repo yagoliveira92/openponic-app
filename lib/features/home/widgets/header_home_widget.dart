@@ -11,7 +11,7 @@ class HeaderHomeWidget extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          height: _size.height * 0.25,
+          height: _size.height * 0.28,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(25.0),
@@ -71,7 +71,7 @@ class HeaderHomeWidget extends StatelessWidget {
           left: 50.0,
           right: 50.0,
           child: Card(
-            elevation: 15,
+            elevation: 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),

@@ -20,7 +20,7 @@ class _HomePageScreenState extends ConsumerState<HomePageScreen> {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           SizedBox(
-            height: _size.height * 0.35,
+            height: _size.height * 0.37,
             child: const HeaderHomeWidget(),
           ),
           const GridCardsHomeWidget(),

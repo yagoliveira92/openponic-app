@@ -5,8 +5,13 @@ class WeatherForecastScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Previsão do Tempo'),
+      ),
+      body: Container(
+        color: Colors.amber,
+      ),
     );
   }
 }

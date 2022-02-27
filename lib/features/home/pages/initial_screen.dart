@@ -1,4 +1,4 @@
-import 'package:app_openponic/core/providers/provider_container.dart';
+import 'package:app_openponic/features/home/controller/bottom_bar/bottom_bar_controller.dart';
 import 'package:app_openponic/features/home/pages/home_page_screen.dart';
 import 'package:app_openponic/features/home/pages/info_screen.dart';
 import 'package:app_openponic/features/home/pages/weather_forecast_screen.dart';
@@ -15,6 +15,7 @@ class InitialScreen extends ConsumerWidget {
     final int menuIndex = ref.watch(bottomBarControllerProvider) as int;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.grey[100],
         bottomNavigationBar: BottomBarWidget(
           currentIndex: menuIndex,
           changeIndex: (index) {

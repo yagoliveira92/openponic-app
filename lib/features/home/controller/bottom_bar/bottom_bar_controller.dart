@@ -5,3 +5,7 @@ class BottomBarController extends StateNotifier<int> {
 
   set value(int index) => state = index;
 }
+
+final bottomBarControllerProvider = StateNotifierProvider(
+  (ref) => BottomBarController(),
+);

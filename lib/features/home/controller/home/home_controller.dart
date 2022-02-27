@@ -14,3 +14,7 @@ class HomeController extends StateNotifier<HomeControllerState> {
     });
   }
 }
+
+final homeControllerNotifierProvider = StateNotifierProvider(
+  (ref) => HomeController(),
+);
