@@ -1,5 +1,5 @@
 import 'package:app_openponic/common/openponic_color.dart';
-import 'package:app_openponic/features/home/pages/initial_screen.dart';
+import 'package:app_openponic/core/routes/routes_container.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'AntipastoPro',
         backgroundColor: Colors.white,
       ),
-      home: const InitialScreen(),
+      initialRoute: '/',
+      routes: routers,
     );
   }
 }

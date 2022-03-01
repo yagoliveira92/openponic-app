@@ -97,7 +97,6 @@ class GridCardsHomeWidget extends StatelessWidget {
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,
-                          fontFamily: 'Roboto',
                           color: Colors.red,
                         ),
                       ),
