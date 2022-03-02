@@ -1,4 +1,4 @@
-import 'package:app_openponic/common/openponic_color.dart';
+import 'package:app_openponic/common/colors/openponic_color.dart';
 import 'package:app_openponic/core/routes/routes_container.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

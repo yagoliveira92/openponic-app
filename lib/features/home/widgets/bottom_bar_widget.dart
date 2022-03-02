@@ -1,3 +1,4 @@
+import 'package:app_openponic/common/icons/openponic_icons.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarWidget extends StatelessWidget {
@@ -15,7 +16,7 @@ class BottomBarWidget extends StatelessWidget {
     return BottomNavigationBar(
       backgroundColor: Colors.white,
       elevation: 22.0,
-      iconSize: 32.0,
+      iconSize: 25.0,
       selectedItemColor: Colors.green,
       onTap: changeIndex,
       currentIndex: currentIndex,
@@ -23,9 +24,10 @@ class BottomBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           backgroundColor: Colors.green,
           icon: Padding(
-            padding: EdgeInsets.only(left: 8.0, right: 8.0),
+            padding: EdgeInsets.only(left: 8.0, right: 8.0, bottom: 5.0),
             child: Icon(
-              Icons.ac_unit_outlined,
+              OpenponicIcons.temperatire,
+              size: 22.0,
             ),
           ),
           label: 'Previsão',

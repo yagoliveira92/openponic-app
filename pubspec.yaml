@@ -86,6 +86,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: Openponic
+      fonts:
+        - asset: assets/icons/Openponic.ttf
+
     - family: AntipastoPro
       fonts:
         - asset: assets/fonts/Antipasto-Pro-ExtraBold.ttf

@@ -1,4 +1,4 @@
-import 'package:app_openponic/common/email_validator.dart';
+import 'package:app_openponic/common/validators/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,5 +1,5 @@
-import 'package:app_openponic/common/empty_validator.dart';
-import 'package:app_openponic/common/openponic_color.dart';
+import 'package:app_openponic/common/colors/openponic_color.dart';
+import 'package:app_openponic/common/validators/empty_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

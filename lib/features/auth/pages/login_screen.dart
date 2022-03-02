@@ -1,4 +1,4 @@
-import 'package:app_openponic/common/openponic_color.dart';
+import 'package:app_openponic/common/colors/openponic_color.dart';
 import 'package:app_openponic/features/auth/controller/login/login_controller.dart';
 import 'package:app_openponic/features/auth/controller/login/login_controller_state.dart';
 import 'package:app_openponic/features/auth/widgets/email_field_widget.dart';
