@@ -1,14 +1,13 @@
 import 'package:app_openponic/common/icons/openponic_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WeatherForecastScreen extends StatelessWidget {
+class WeatherForecastScreen extends ConsumerWidget {
   const WeatherForecastScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
@@ -19,7 +18,7 @@ class WeatherForecastScreen extends StatelessWidget {
               height: 280.0,
               decoration: const BoxDecoration(
                 color: Color(0xFF4db6e3),
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(35.0),
                   bottomRight: Radius.circular(35.0),
                 ),
