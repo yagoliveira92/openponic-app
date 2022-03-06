@@ -1,16 +1,10 @@
 import 'package:app_openponic/features/home/widgets/grid_cards_home_widget.dart';
 import 'package:app_openponic/features/home/widgets/header_home_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomePageScreen extends ConsumerStatefulWidget {
+class HomePageScreen extends StatelessWidget {
   const HomePageScreen({Key? key}) : super(key: key);
 
-  @override
-  _HomePageScreenState createState() => _HomePageScreenState();
-}
-
-class _HomePageScreenState extends ConsumerState<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;

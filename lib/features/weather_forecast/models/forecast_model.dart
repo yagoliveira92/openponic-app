@@ -1,6 +1,6 @@
-class Forecast {
-  Forecast({
-    this.date,
+class ForecastModel {
+  ForecastModel({
+    required this.date,
     this.weekday,
     this.max,
     this.min,
@@ -8,20 +8,23 @@ class Forecast {
     this.condition,
   });
 
-  Forecast.fromJson(dynamic json) {
-    date = json['date'];
-    weekday = json['weekday'];
-    max = json['max'];
-    min = json['min'];
-    description = json['description'];
-    condition = json['condition'];
-  }
-  String? date;
+  String date;
   String? weekday;
   int? max;
   int? min;
   String? description;
   String? condition;
+
+  factory ForecastModel.fromJson(Map<String, dynamic> json) {
+    return ForecastModel(
+      date: json['date'],
+      weekday: json['weekday'],
+      max: json['max'],
+      min: json['min'],
+      description: json['description'],
+      condition: json['condition'],
+    );
+  }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

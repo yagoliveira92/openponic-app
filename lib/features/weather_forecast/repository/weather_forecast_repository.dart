@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:app_openponic/features/weather_forecast/models/weather_forecast_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
@@ -11,10 +13,13 @@ class NetworkException implements Exception {}
 class WeatherRepository implements IWeatherRepository {
   @override
   Future<WeatherForecastModel> getWeather() async {
-    var url = Uri.parse('https://example.com/whatsit/create');
-    var response = await http.post(url);
+    var url = Uri.parse(
+      'https://api.hgbrasil.com/weather?key=e62cb5cd&woeid=455839',
+    );
+    var response = await http.get(url);
     if (response.statusCode < 400) {
-      return WeatherForecastModel.fromJson(response.body);
+      return WeatherForecastModel.fromJson(
+          jsonDecode(response.body)['results']);
     } else {
       throw NetworkException();
     }

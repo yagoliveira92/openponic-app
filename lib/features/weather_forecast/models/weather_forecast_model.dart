@@ -1,6 +1,5 @@
 import 'package:app_openponic/features/weather_forecast/models/forecast_model.dart';
 
-
 class WeatherForecastModel {
   WeatherForecastModel({
     this.temp,
@@ -18,32 +17,9 @@ class WeatherForecastModel {
     this.sunset,
     this.conditionSlug,
     this.cityName,
-    this.forecast,
+    required this.forecastModel,
   });
 
-  WeatherForecastModel.fromJson(dynamic json) {
-    temp = json['temp'];
-    date = json['date'];
-    time = json['time'];
-    conditionCode = json['condition_code'];
-    description = json['description'];
-    currently = json['currently'];
-    cid = json['cid'];
-    city = json['city'];
-    imgId = json['img_id'];
-    humidity = json['humidity'];
-    windSpeedy = json['wind_speedy'];
-    sunrise = json['sunrise'];
-    sunset = json['sunset'];
-    conditionSlug = json['condition_slug'];
-    cityName = json['city_name'];
-    if (json['forecast'] != null) {
-      forecast = [];
-      json['forecast'].forEach((v) {
-        forecast?.add(Forecast.fromJson(v));
-      });
-    }
-  }
   int? temp;
   String? date;
   String? time;
@@ -59,7 +35,32 @@ class WeatherForecastModel {
   String? sunset;
   String? conditionSlug;
   String? cityName;
-  List<Forecast>? forecast;
+  List<ForecastModel> forecastModel;
+
+  factory WeatherForecastModel.fromJson(Map<String, dynamic> json) {
+    return WeatherForecastModel(
+      forecastModel: List<ForecastModel>.from(
+        json['forecast'].map(
+          (map) => ForecastModel.fromJson(map),
+        ),
+      ),
+      description: json['description'],
+      temp: json['temp'],
+      date: json['date'],
+      time: json['time'],
+      conditionCode: json['condition_code'],
+      currently: json['currently'],
+      cid: json['cid'],
+      city: json['city'],
+      imgId: json['img_id'],
+      humidity: json['humidity'],
+      windSpeedy: json['wind_speedy'],
+      sunrise: json['sunrise'],
+      sunset: json['sunset'],
+      conditionSlug: json['condition_slug'],
+      cityName: json['city_name'],
+    );
+  }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -78,9 +79,7 @@ class WeatherForecastModel {
     map['sunset'] = sunset;
     map['condition_slug'] = conditionSlug;
     map['city_name'] = cityName;
-    if (forecast != null) {
-      map['forecast'] = forecast?.map((v) => v.toJson()).toList();
-    }
+    map['forecast'] = forecastModel.map((v) => v.toJson()).toList();
     return map;
   }
 }
