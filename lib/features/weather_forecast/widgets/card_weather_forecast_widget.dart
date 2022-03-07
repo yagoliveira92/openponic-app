@@ -1,4 +1,4 @@
-import 'package:app_openponic/common/icons/openponic_icons.dart';
+import 'package:app_openponic/common/enums/condition_slug_enum.dart';
 import 'package:app_openponic/features/weather_forecast/models/forecast_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +17,7 @@ class CardWeatherForecastWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Icon(OpenponicIcons.cloud_sun),
+            Icon(forecast.conditionSlug?.icon),
             Text(
               '${forecast.weekday}',
               style: const TextStyle(

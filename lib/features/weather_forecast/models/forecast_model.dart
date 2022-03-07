@@ -1,3 +1,5 @@
+import 'package:app_openponic/common/enums/condition_slug_enum.dart';
+
 class ForecastModel {
   ForecastModel({
     required this.date,
@@ -5,7 +7,8 @@ class ForecastModel {
     this.max,
     this.min,
     this.description,
-    this.condition,
+    required this.condition,
+    this.conditionSlug,
   });
 
   String date;
@@ -13,7 +16,8 @@ class ForecastModel {
   int? max;
   int? min;
   String? description;
-  String? condition;
+  String condition;
+  ConditionSlugEnum? conditionSlug;
 
   factory ForecastModel.fromJson(Map<String, dynamic> json) {
     return ForecastModel(
@@ -34,6 +38,27 @@ class ForecastModel {
     map['min'] = min;
     map['description'] = description;
     map['condition'] = condition;
+    map['condition_slug'] = conditionSlug?.condition;
     return map;
+  }
+
+  ForecastModel copyWith({
+    String? date,
+    String? weekday,
+    int? max,
+    int? min,
+    String? description,
+    String? condition,
+    ConditionSlugEnum? conditionSlug,
+  }) {
+    return ForecastModel(
+      date: date ?? this.date,
+      weekday: weekday ?? this.weekday,
+      max: max ?? this.max,
+      min: min ?? this.min,
+      description: description ?? this.description,
+      condition: condition ?? this.condition,
+      conditionSlug: conditionSlug ?? this.conditionSlug,
+    );
   }
 }

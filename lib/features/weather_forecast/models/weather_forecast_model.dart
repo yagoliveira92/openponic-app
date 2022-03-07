@@ -1,3 +1,4 @@
+import 'package:app_openponic/common/enums/condition_slug_enum.dart';
 import 'package:app_openponic/features/weather_forecast/models/forecast_model.dart';
 
 class WeatherForecastModel {
@@ -15,8 +16,9 @@ class WeatherForecastModel {
     this.windSpeedy,
     this.sunrise,
     this.sunset,
-    this.conditionSlug,
+    this.condition,
     this.cityName,
+    this.conditionSlugEnum,
     required this.forecastModel,
   });
 
@@ -33,8 +35,9 @@ class WeatherForecastModel {
   String? windSpeedy;
   String? sunrise;
   String? sunset;
-  String? conditionSlug;
+  String? condition;
   String? cityName;
+  ConditionSlugEnum? conditionSlugEnum;
   List<ForecastModel> forecastModel;
 
   factory WeatherForecastModel.fromJson(Map<String, dynamic> json) {
@@ -57,7 +60,7 @@ class WeatherForecastModel {
       windSpeedy: json['wind_speedy'],
       sunrise: json['sunrise'],
       sunset: json['sunset'],
-      conditionSlug: json['condition_slug'],
+      condition: json['condition_slug'],
       cityName: json['city_name'],
     );
   }
@@ -77,9 +80,49 @@ class WeatherForecastModel {
     map['wind_speedy'] = windSpeedy;
     map['sunrise'] = sunrise;
     map['sunset'] = sunset;
-    map['condition_slug'] = conditionSlug;
+    map['condition_slug'] = condition;
     map['city_name'] = cityName;
     map['forecast'] = forecastModel.map((v) => v.toJson()).toList();
     return map;
+  }
+
+  WeatherForecastModel copyWith({
+    int? temp,
+    String? date,
+    String? time,
+    String? conditionCode,
+    String? description,
+    String? currently,
+    String? cid,
+    String? city,
+    String? imgId,
+    int? humidity,
+    String? windSpeedy,
+    ConditionSlugEnum? conditionSlugEnum,
+    String? sunrise,
+    String? sunset,
+    String? condition,
+    String? cityName,
+    List<ForecastModel>? forecastModel,
+  }) {
+    return WeatherForecastModel(
+      temp: temp ?? this.temp,
+      date: date ?? this.date,
+      time: time ?? this.time,
+      conditionCode: conditionCode ?? this.conditionCode,
+      description: description ?? this.description,
+      currently: currently ?? this.currently,
+      cid: cid ?? this.cid,
+      city: city ?? this.city,
+      imgId: imgId ?? this.imgId,
+      humidity: humidity ?? this.humidity,
+      windSpeedy: windSpeedy ?? this.windSpeedy,
+      sunrise: sunrise ?? this.sunrise,
+      sunset: sunset ?? this.sunset,
+      condition: condition ?? this.condition,
+      cityName: cityName ?? this.cityName,
+      forecastModel: forecastModel ?? this.forecastModel,
+      conditionSlugEnum: conditionSlugEnum ?? this.conditionSlugEnum,
+    );
   }
 }

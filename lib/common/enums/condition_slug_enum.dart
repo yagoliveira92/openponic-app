@@ -1,4 +1,7 @@
-enum ConditionSlug {
+import 'package:app_openponic/common/icons/openponic_icons.dart';
+import 'package:flutter/material.dart';
+
+enum ConditionSlugEnum {
   storm,
   snow,
   hail,
@@ -11,37 +14,69 @@ enum ConditionSlug {
   cloudlyNight,
   noneDay,
   noneNight,
+  erro,
 }
 
-extension ConditionSlugExtension on ConditionSlug {
+extension ConditionSlugEnumExtension on ConditionSlugEnum {
   String get condition {
     switch (this) {
-      case ConditionSlug.storm:
+      case ConditionSlugEnum.storm:
         return 'Tempestade';
-      case ConditionSlug.snow:
+      case ConditionSlugEnum.snow:
         return 'Neve';
-      case ConditionSlug.hail:
+      case ConditionSlugEnum.hail:
         return 'Granizo';
-      case ConditionSlug.rain:
+      case ConditionSlugEnum.rain:
         return 'Chuva';
-      case ConditionSlug.fog:
+      case ConditionSlugEnum.fog:
         return 'Neblina';
-      case ConditionSlug.clearDay:
+      case ConditionSlugEnum.clearDay:
         return 'Dia Limpo';
-      case ConditionSlug.clearNight:
+      case ConditionSlugEnum.clearNight:
         return 'Noite Limpa';
-      case ConditionSlug.cloud:
+      case ConditionSlugEnum.cloud:
         return 'Nublado';
-      case ConditionSlug.cloudlyDay:
+      case ConditionSlugEnum.cloudlyDay:
         return 'Nublado de Dia';
-      case ConditionSlug.cloudlyNight:
+      case ConditionSlugEnum.cloudlyNight:
         return 'Nublado de Noite';
-      case ConditionSlug.noneDay:
+      case ConditionSlugEnum.noneDay:
         return 'Erro - Dia';
-      case ConditionSlug.noneNight:
+      case ConditionSlugEnum.noneNight:
         return 'Erro - Noite';
       default:
         return 'Falha ao obter condição';
+    }
+  }
+
+  IconData get icon {
+    switch (this) {
+      case ConditionSlugEnum.storm:
+        return OpenponicIcons.clouds_flash_alt;
+      case ConditionSlugEnum.snow:
+        return OpenponicIcons.snow_heavy;
+      case ConditionSlugEnum.hail:
+        return OpenponicIcons.hail;
+      case ConditionSlugEnum.rain:
+        return OpenponicIcons.rain_1;
+      case ConditionSlugEnum.fog:
+        return OpenponicIcons.fog_cloud;
+      case ConditionSlugEnum.clearDay:
+        return OpenponicIcons.sun;
+      case ConditionSlugEnum.clearNight:
+        return OpenponicIcons.moon;
+      case ConditionSlugEnum.cloud:
+        return OpenponicIcons.cloud_1;
+      case ConditionSlugEnum.cloudlyDay:
+        return OpenponicIcons.cloud_sun_1;
+      case ConditionSlugEnum.cloudlyNight:
+        return OpenponicIcons.cloud_moon;
+      case ConditionSlugEnum.noneDay:
+        return OpenponicIcons.sun_2;
+      case ConditionSlugEnum.noneNight:
+        return OpenponicIcons.moon_1;
+      default:
+        return OpenponicIcons.na;
     }
   }
 }
