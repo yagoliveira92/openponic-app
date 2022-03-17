@@ -79,4 +79,35 @@ extension ConditionSlugEnumExtension on ConditionSlugEnum {
         return OpenponicIcons.na;
     }
   }
+
+  String get conditionImage {
+    switch (this) {
+      case ConditionSlugEnum.storm:
+        return 'assets/image/storm.png';
+      case ConditionSlugEnum.snow:
+        return 'assets/image/snow.png';
+      case ConditionSlugEnum.hail:
+        return 'assets/image/hail.png';
+      case ConditionSlugEnum.rain:
+        return 'assets/image/rain.png';
+      case ConditionSlugEnum.fog:
+        return 'assets/image/fog.png';
+      case ConditionSlugEnum.clearDay:
+        return 'assets/image/clear_day.png';
+      case ConditionSlugEnum.clearNight:
+        return 'assets/image/clear_night.png';
+      case ConditionSlugEnum.cloud:
+        return 'assets/image/cloud.png';
+      case ConditionSlugEnum.cloudlyDay:
+        return 'assets/image/cloudly_day.png';
+      case ConditionSlugEnum.cloudlyNight:
+        return 'assets/image/cloudly_night.png';
+      case ConditionSlugEnum.noneDay:
+        return 'assets/image/none_day.png';
+      case ConditionSlugEnum.noneNight:
+        return 'assets/image/none_night.png';
+      default:
+        return 'assets/image/error.png';
+    }
+  }
 }

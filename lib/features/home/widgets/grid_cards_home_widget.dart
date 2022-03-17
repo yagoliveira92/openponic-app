@@ -29,10 +29,9 @@ class GridCardsHomeWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Icon(
-                      Icons.agriculture_sharp,
-                      size: 70.0,
-                      color: Colors.blueGrey,
+                    Image.asset(
+                      'assets/image/temperature.png',
+                      height: 70.0,
                     ),
                     Text(
                       '32º ',
@@ -87,10 +86,9 @@ class GridCardsHomeWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Icon(
-                      Icons.airline_seat_recline_normal,
-                      size: 70.0,
-                      color: Colors.blueGrey,
+                    Image.asset(
+                      'assets/image/humidity.png',
+                      height: 70.0,
                     ),
                     Text(
                       '10%',
@@ -144,10 +142,9 @@ class GridCardsHomeWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Icon(
-                      Icons.adb,
-                      size: 70.0,
-                      color: Colors.blueGrey,
+                    Image.asset(
+                      'assets/image/condutivity.png',
+                      height: 70.0,
                     ),
                     Text(
                       '20 dS',
@@ -202,10 +199,9 @@ class GridCardsHomeWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Icon(
-                      Icons.phonelink,
-                      size: 70.0,
-                      color: Colors.blueGrey,
+                    Image.asset(
+                      'assets/image/ph.png',
+                      height: 70.0,
                     ),
                     Text(
                       '7 pKa',

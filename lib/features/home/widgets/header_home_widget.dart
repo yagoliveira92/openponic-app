@@ -68,8 +68,8 @@ class HeaderHomeWidget extends StatelessWidget {
         ),
         Positioned(
           bottom: 0,
-          left: 50.0,
-          right: 50.0,
+          left: 40.0,
+          right: 40.0,
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
@@ -84,38 +84,36 @@ class HeaderHomeWidget extends StatelessWidget {
                     'assets/image/openponic_logo.png',
                     height: 80.0,
                   ),
+                  const SizedBox(
+                    height: 65.0,
+                    child: VerticalDivider(
+                      width: 10.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5.0,
+                  ),
                   SizedBox(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/image/weather_img.png',
-                          height: 75.0,
+                        const CircleAvatar(
+                          minRadius: 40,
+                          backgroundImage:
+                              AssetImage('assets/image/profile_image.png'),
                         ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              '32º ',
-                              style: GoogleFonts.montserrat(
-                                textStyle: const TextStyle(
-                                  fontSize: 25,
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              '17º',
-                              style: GoogleFonts.montserrat(
-                                textStyle: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
+                        const SizedBox(
+                          height: 5.0,
+                        ),
+                        Text(
+                          'Fulaninho',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
                   ),

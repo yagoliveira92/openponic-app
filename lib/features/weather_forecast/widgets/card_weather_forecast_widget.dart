@@ -17,11 +17,14 @@ class CardWeatherForecastWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(forecast.conditionSlug?.icon),
+            Icon(
+              forecast.conditionSlug?.icon,
+              color: Colors.blueGrey,
+            ),
             Text(
-              '${forecast.weekday}',
-              style: const TextStyle(
-                fontSize: 17.0,
+              '${forecast.date} - ${forecast.weekday}',
+              style: GoogleFonts.montserrat(
+                fontSize: 15.0,
               ),
             ),
             Text.rich(
@@ -29,12 +32,18 @@ class CardWeatherForecastWidget extends StatelessWidget {
                 style: GoogleFonts.montserrat(),
                 children: [
                   TextSpan(
-                    text: '${forecast.max}',
+                    text: '${forecast.max}º',
                     style: const TextStyle(
+                      color: Colors.red,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  TextSpan(text: ' - ${forecast.min}'),
+                  TextSpan(
+                    text: ' - ${forecast.min}º',
+                    style: const TextStyle(
+                      color: Colors.blueAccent,
+                    ),
+                  ),
                 ],
               ),
             ),
