@@ -10,7 +10,6 @@ class WeatherForecastController extends StateNotifier<WeatherForecastState> {
 
   Future<void> getWeatherForecast() async {
     try {
-      state = const WeatherForecastLoading();
       final weather = await weatherRepository.getWeather();
       state = WeatherForecastReady(weatherForecastModel: weather);
     } on NetworkException {

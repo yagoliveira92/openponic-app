@@ -26,7 +26,6 @@ class InitialScreen extends ConsumerWidget {
           },
         ),
         body: PageView(
-          physics: const NeverScrollableScrollPhysics(),
           controller: _controller,
           onPageChanged: (index) =>
               ref.read(bottomBarControllerProvider.notifier).value = index,

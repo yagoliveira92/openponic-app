@@ -1,20 +1,11 @@
-import 'package:app_openponic/features/home/controller/home/home_controller_state.dart';
+import 'package:app_openponic/features/home/models/flowerbad_model.dart';
+import 'package:app_openponic/features/home/repository/home_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeController extends StateNotifier<HomeControllerState> {
-  HomeController() : super(const HomeControllerInit());
-
-  Future<void> clickButton() async {
-    state = const HomeControllerLoading();
-    await Future.delayed(
-        const Duration(
-          seconds: 5,
-        ), () {
-      state = const HomeControllerReady();
-    });
+final homeStream = StreamProvider.autoDispose<FlowerbadModel>((ref) async* {
+  final IHomeRepository homeRepository = ref.watch(homeRepositoryProvider);
+  final data = homeRepository.getAllFlowerbads();
+  await for (final value in data) {
+    yield value;
   }
-}
-
-final homeControllerNotifierProvider = StateNotifierProvider(
-  (ref) => HomeController(),
-);
+});

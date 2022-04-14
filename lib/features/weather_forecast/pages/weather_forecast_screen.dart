@@ -30,34 +30,38 @@ class _WeatherForecastScreenState extends ConsumerState<WeatherForecastScreen>
     super.build(context);
     final state = ref.watch(weatherForecastController);
     if (state is WeatherForecastReady) {
-      return Scaffold(
-        backgroundColor: Colors.grey[100],
-        body: CustomScrollView(
-          physics: const ScrollPhysics(),
-          slivers: [
-            HeaderForecastWeatherWidget(
-                weatherForecastModel: state.weatherForecastModel),
-            const SliverToBoxAdapter(
-              child: SizedBox(
-                height: 15.0,
+      return RefreshIndicator(
+        onRefresh: () =>
+            ref.read(weatherForecastController.notifier).getWeatherForecast(),
+        child: Scaffold(
+          backgroundColor: Colors.grey[100],
+          body: CustomScrollView(
+            physics: const ScrollPhysics(),
+            slivers: [
+              HeaderForecastWeatherWidget(
+                  weatherForecastModel: state.weatherForecastModel),
+              const SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 15.0,
+                ),
               ),
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return CardWeatherForecastWidget(
-                    forecast: state.weatherForecastModel.forecastModel[index],
-                  );
-                },
-                childCount: state.weatherForecastModel.forecastModel.length,
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    return CardWeatherForecastWidget(
+                      forecast: state.weatherForecastModel.forecastModel[index],
+                    );
+                  },
+                  childCount: state.weatherForecastModel.forecastModel.length,
+                ),
               ),
-            ),
-            const SliverToBoxAdapter(
-              child: SizedBox(
-                height: 12.0,
-              ),
-            )
-          ],
+              const SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 12.0,
+                ),
+              )
+            ],
+          ),
         ),
       );
     }

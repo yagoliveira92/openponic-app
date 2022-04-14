@@ -44,9 +44,9 @@ class SensorModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'nome': this.nome,
-      'status': this.status,
-      'value': this.value,
+      'nome': nome,
+      'status': status,
+      'value': value,
     };
   }
 
@@ -54,7 +54,7 @@ class SensorModel {
     return SensorModel(
       nome: map['nome'] as String,
       status: map['status'] as String,
-      value: map['value'] as double,
+      value: double.parse(map['value']),
     );
   }
 }
