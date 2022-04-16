@@ -107,7 +107,7 @@ class HeaderForecastWeatherWidget extends StatelessWidget {
                         '${weatherForecastModel.humidity}%',
                         style: GoogleFonts.montserrat(),
                       ),
-                      const Text('Humidade'),
+                      const Text('Umidade'),
                     ],
                   ),
                   Column(

@@ -6,20 +6,27 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 abstract class IHomeRepository {
-  Stream<FlowerbadModel> getAllFlowerbads();
+  Stream<List<FlowerbadModel>> getAllFlowerbads();
 }
 
 class HomeRepository implements IHomeRepository {
   @override
-  Stream<FlowerbadModel> getAllFlowerbads() {
+  Stream<List<FlowerbadModel>> getAllFlowerbads() {
     DatabaseReference allPlat = FirebaseDatabase.instance.ref();
     final dataFinal = allPlat.onValue.map((event) {
       final stream = event.snapshot.value as List;
-      final data = FlowerbadModel.fromMap(
-        jsonDecode(
-          jsonEncode(stream[0]),
-        ),
+      final data = List<FlowerbadModel>.from(
+        stream
+            .map(
+              (e) => FlowerbadModel.fromMap(
+                jsonDecode(
+                  jsonEncode(e),
+                ),
+              ),
+            )
+            .toList(),
       );
+
       return data;
     });
     return dataFinal;

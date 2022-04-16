@@ -1,9 +1,11 @@
+import 'package:app_openponic/features/home/models/sensor_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GridCardsHomeWidget extends StatelessWidget {
-  const GridCardsHomeWidget({Key? key}) : super(key: key);
-
+  const GridCardsHomeWidget({required this.sensors, Key? key})
+      : super(key: key);
+  final List<SensorModel> sensors;
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -34,7 +36,7 @@ class GridCardsHomeWidget extends StatelessWidget {
                       height: 70.0,
                     ),
                     Text(
-                      '32º ',
+                      '${sensors[1].value} ',
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,
@@ -91,7 +93,7 @@ class GridCardsHomeWidget extends StatelessWidget {
                       height: 70.0,
                     ),
                     Text(
-                      '10%',
+                      '${sensors[3].value}',
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,
@@ -144,10 +146,10 @@ class GridCardsHomeWidget extends StatelessWidget {
                   children: <Widget>[
                     Image.asset(
                       'assets/image/condutivity.png',
-                      height: 70.0,
+                      height: 60.0,
                     ),
                     Text(
-                      '20 dS',
+                      '${sensors[2].value} dS',
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,
@@ -186,7 +188,7 @@ class GridCardsHomeWidget extends StatelessWidget {
         Card(
           elevation: 5,
           child: Container(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
@@ -201,10 +203,10 @@ class GridCardsHomeWidget extends StatelessWidget {
                   children: <Widget>[
                     Image.asset(
                       'assets/image/ph.png',
-                      height: 70.0,
+                      height: 60.0,
                     ),
                     Text(
-                      '7 pKa',
+                      '${sensors[0].value} pKa',
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,

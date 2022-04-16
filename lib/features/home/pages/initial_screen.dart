@@ -1,6 +1,6 @@
 import 'package:app_openponic/features/home/controller/bottom_bar/bottom_bar_controller.dart';
 import 'package:app_openponic/features/home/pages/home_page_screen.dart';
-import 'package:app_openponic/features/home/pages/info_screen.dart';
+import 'package:app_openponic/features/settings/pages/settings_screen.dart';
 import 'package:app_openponic/features/home/widgets/bottom_bar_widget.dart';
 import 'package:app_openponic/features/weather_forecast/pages/weather_forecast_screen.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class InitialScreen extends ConsumerWidget {
           children: const <Widget>[
             WeatherForecastScreen(),
             HomePageScreen(),
-            InfoScreen(),
+            SettingsScreen(),
           ],
         ),
       ),

@@ -43,9 +43,9 @@ class BottomBarWidget extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.menu,
+            Icons.settings,
           ),
-          label: 'Menu',
+          label: 'Configurações',
         ),
       ],
     );

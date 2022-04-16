@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HeaderHomeWidget extends StatelessWidget {
-  const HeaderHomeWidget({Key? key}) : super(key: key);
+  const HeaderHomeWidget({
+    required this.flowebadName,
+    required this.selectedFlowerbad,
+    required this.changeFlowerbad,
+    Key? key,
+  }) : super(key: key);
+  final List<String> flowebadName;
+  final String selectedFlowerbad;
+  final Function({required String name}) changeFlowerbad;
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +39,24 @@ class HeaderHomeWidget extends StatelessWidget {
         ),
         Positioned(
           child: InkWell(
-            onTap: () async => showDialog(
-              context: context,
-              builder: (BuildContext context) =>
-                  const PlantingBedDialogWidget(),
-            ),
+            onTap: () async {
+              return showModalBottomSheet<void>(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(25),
+                    topLeft: Radius.circular(25),
+                  ),
+                ),
+                context: context,
+                builder: (BuildContext context) {
+                  return PlantingBedDialogWidget(
+                    actualName: selectedFlowerbad,
+                    changeFlowerbad: changeFlowerbad,
+                    listName: flowebadName,
+                  );
+                },
+              );
+            },
             child: Container(
               height: 60.0,
               width: _size.width,
@@ -53,13 +74,15 @@ class HeaderHomeWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
-                  '< Canteiro Maria Opala >',
-                  style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white,
+                  '< $selectedFlowerbad >',
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -108,7 +131,7 @@ class HeaderHomeWidget extends StatelessWidget {
                           height: 5.0,
                         ),
                         Text(
-                          'Fulaninho',
+                          'Produtor',
                           style: GoogleFonts.montserrat(
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold,
