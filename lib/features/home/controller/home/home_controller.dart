@@ -5,21 +5,29 @@ import 'package:app_openponic/features/home/repository/home_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeController extends StateNotifier<HomeControllerState> {
-  HomeController() : super(const HomeControllerInit());
+  HomeController({required this.homeRepository})
+      : super(const HomeControllerInit());
 
+  final IHomeRepository homeRepository;
   List<FlowerbadModel> listFlowerbad = [];
   String flowerbadName = '';
   List<SensorModel> listSensors = [];
   List<String> allFlowerbadNames = [];
   bool isChangeBed = false;
 
-  void initHome({required List<FlowerbadModel> list}) {
+  void initHome({required List<FlowerbadModel> list}) async {
     if (!isChangeBed) {
+      listFlowerbad = [];
       allFlowerbadNames = [];
-      listFlowerbad = list;
       flowerbadName = list[0].nome;
-      for (var element in list) {
-        allFlowerbadNames.add(element.nome);
+      for (var i = 0; i < list.length; i++) {
+        allFlowerbadNames.add(list[i].nome);
+        final test = await homeRepository.getStatus(list[i]);
+        listFlowerbad.add(
+          list[i].copyWith(
+            sensors: test,
+          ),
+        );
       }
       var newState = HomeControllerReady(
         allFlowerbad: allFlowerbadNames,
@@ -55,5 +63,7 @@ final homeStream =
 
 final homeController =
     StateNotifierProvider<HomeController, HomeControllerState>(
-  (ref) => HomeController(),
+  (ref) => HomeController(
+    homeRepository: ref.watch(homeRepositoryProvider),
+  ),
 );

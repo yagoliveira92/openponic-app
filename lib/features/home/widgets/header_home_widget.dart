@@ -76,7 +76,7 @@ class HeaderHomeWidget extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  '< $selectedFlowerbad >',
+                  selectedFlowerbad,
                   style: GoogleFonts.montserrat(
                     textStyle: const TextStyle(
                       fontSize: 20.0,

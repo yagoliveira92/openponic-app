@@ -1,4 +1,6 @@
+import 'package:app_openponic/common/enums/status_enum.dart';
 import 'package:app_openponic/features/home/models/sensor_model.dart';
+import 'package:app_openponic/features/home/widgets/status_badge_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,26 +49,8 @@ class GridCardsHomeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    left: 15.0,
-                    right: 15.0,
-                    top: 3.0,
-                    bottom: 3.0,
-                  ),
-                  decoration: const BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  ),
-                  child: const Text(
-                    'Bom',
-                    style: TextStyle(
-                      fontSize: 17,
-                      color: Colors.white,
-                    ),
-                  ),
+                StatusBadgeWidget(
+                  status: sensors[1].status ?? StatusEnum.erro,
                 )
               ],
             ),
@@ -103,26 +87,8 @@ class GridCardsHomeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    left: 15.0,
-                    right: 15.0,
-                    top: 3.0,
-                    bottom: 3.0,
-                  ),
-                  decoration: const BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  ),
-                  child: const Text(
-                    'Bom',
-                    style: TextStyle(
-                      fontSize: 17,
-                      color: Colors.white,
-                    ),
-                  ),
+                StatusBadgeWidget(
+                  status: sensors[3].status ?? StatusEnum.erro,
                 )
               ],
             ),
@@ -160,26 +126,8 @@ class GridCardsHomeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    left: 15.0,
-                    right: 15.0,
-                    top: 3.0,
-                    bottom: 3.0,
-                  ),
-                  decoration: const BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  ),
-                  child: const Text(
-                    'Alerta',
-                    style: TextStyle(
-                      fontSize: 17,
-                      color: Colors.black54,
-                    ),
-                  ),
+                StatusBadgeWidget(
+                  status: sensors[2].status ?? StatusEnum.erro,
                 )
               ],
             ),
@@ -217,27 +165,9 @@ class GridCardsHomeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    left: 15.0,
-                    right: 15.0,
-                    top: 3.0,
-                    bottom: 3.0,
-                  ),
-                  decoration: const BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  ),
-                  child: const Text(
-                    'Ruim',
-                    style: TextStyle(
-                      fontSize: 17,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                StatusBadgeWidget(
+                  status: sensors[0].status ?? StatusEnum.erro,
+                )
               ],
             ),
           ),

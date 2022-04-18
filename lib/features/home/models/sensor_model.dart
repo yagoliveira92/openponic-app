@@ -1,11 +1,13 @@
+import 'package:app_openponic/common/enums/status_enum.dart';
+
 class SensorModel {
   String nome;
-  String status;
+  StatusEnum? status;
   double value;
 
   SensorModel({
     required this.nome,
-    required this.status,
+    this.status,
     required this.value,
   });
 
@@ -32,7 +34,7 @@ class SensorModel {
 
   SensorModel copyWith({
     String? nome,
-    String? status,
+    StatusEnum? status,
     double? value,
   }) {
     return SensorModel(
@@ -53,7 +55,6 @@ class SensorModel {
   factory SensorModel.fromMap(Map<String, dynamic> map) {
     return SensorModel(
       nome: map['nome'] as String,
-      status: map['status'] as String,
       value: double.parse(map['value']),
     );
   }
