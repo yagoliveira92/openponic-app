@@ -17,7 +17,7 @@ class _WeatherForecastScreenState extends ConsumerState<WeatherForecastScreen>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (_) => ref.read(weatherForecastController.notifier).getWeatherForecast(),
     );
   }

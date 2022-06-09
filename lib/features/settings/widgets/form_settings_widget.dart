@@ -1,4 +1,3 @@
-import 'package:app_openponic/common/validators/empty_validator.dart';
 import 'package:app_openponic/features/settings/models/parameters_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

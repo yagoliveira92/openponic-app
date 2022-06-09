@@ -24,7 +24,7 @@ class _HomePageScreenState extends ConsumerState<HomePageScreen>
     AsyncValue<List<FlowerbadModel>> data = ref.watch(homeStream);
     return data.when(
       data: (flowerbed) {
-        WidgetsBinding.instance?.addPostFrameCallback(
+        WidgetsBinding.instance.addPostFrameCallback(
           (_) => ref.read(homeController.notifier).initHome(list: flowerbed),
         );
         final state = ref.watch(homeController);

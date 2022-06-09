@@ -38,7 +38,7 @@ class GridCardsHomeWidget extends StatelessWidget {
                       height: 70.0,
                     ),
                     Text(
-                      '${sensors[1].value} ',
+                      '${sensors[1].value} ºC ',
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,
@@ -77,7 +77,7 @@ class GridCardsHomeWidget extends StatelessWidget {
                       height: 70.0,
                     ),
                     Text(
-                      '${sensors[3].value}',
+                      '${sensors[2].value}',
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,
@@ -88,7 +88,7 @@ class GridCardsHomeWidget extends StatelessWidget {
                   ],
                 ),
                 StatusBadgeWidget(
-                  status: sensors[3].status ?? StatusEnum.erro,
+                  status: sensors[2].status ?? StatusEnum.erro,
                 )
               ],
             ),
@@ -115,7 +115,7 @@ class GridCardsHomeWidget extends StatelessWidget {
                       height: 60.0,
                     ),
                     Text(
-                      '${sensors[2].value} dS',
+                      '${sensors[3].value} dS',
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                           fontSize: 18.0,
@@ -127,7 +127,7 @@ class GridCardsHomeWidget extends StatelessWidget {
                   ],
                 ),
                 StatusBadgeWidget(
-                  status: sensors[2].status ?? StatusEnum.erro,
+                  status: sensors[3].status ?? StatusEnum.erro,
                 )
               ],
             ),

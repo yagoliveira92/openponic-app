@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/custom_error.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -33,6 +34,12 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: routers,
+      builder: (BuildContext context, Widget? widget) {
+        ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
+          return CustomError(errorDetails: errorDetails);
+        };
+        return widget!;
+      },
     );
   }
 }

@@ -25,9 +25,7 @@ class StatusBadgeWidget extends StatelessWidget {
         status.condition,
         style: TextStyle(
           fontSize: 17,
-          color: status.condition == 'Alerta'
-              ? OpenponicColor.yellow
-              : Colors.white,
+          color: status.condition == 'Alerta' ? Colors.black : Colors.white,
         ),
       ),
     );

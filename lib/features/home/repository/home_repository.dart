@@ -7,7 +7,6 @@ import 'package:app_openponic/features/home/models/sensor_model.dart';
 import 'package:app_openponic/features/settings/repository/settings_repository.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class IHomeRepository {
   Stream<List<FlowerbadModel>> getAllFlowerbads();
@@ -60,6 +59,10 @@ class HomeRepository implements IHomeRepository {
               (getParameter.value! + (getParameter.value! * 0.15))) {
             newSensors.add(
               element.copyWith(status: StatusEnum.ruim),
+            );
+          } else {
+            newSensors.add(
+              element.copyWith(status: StatusEnum.alerta),
             );
           }
         } else {

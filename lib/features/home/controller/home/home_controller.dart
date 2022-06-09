@@ -17,18 +17,14 @@ class HomeController extends StateNotifier<HomeControllerState> {
 
   void initHome({required List<FlowerbadModel> list}) async {
     if (!isChangeBed) {
-      listFlowerbad = [];
       allFlowerbadNames = [];
       flowerbadName = list[0].nome;
       for (var i = 0; i < list.length; i++) {
         allFlowerbadNames.add(list[i].nome);
         final test = await homeRepository.getStatus(list[i]);
-        listFlowerbad.add(
-          list[i].copyWith(
-            sensors: test,
-          ),
-        );
+        list[i].sensors = test;
       }
+      listFlowerbad = list;
       var newState = HomeControllerReady(
         allFlowerbad: allFlowerbadNames,
         flowerbedSelected: listFlowerbad[0],

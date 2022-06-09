@@ -55,7 +55,7 @@ class SensorModel {
   factory SensorModel.fromMap(Map<String, dynamic> map) {
     return SensorModel(
       nome: map['nome'] as String,
-      value: double.parse(map['value']),
+      value: map['value'] as double,
     );
   }
 }
