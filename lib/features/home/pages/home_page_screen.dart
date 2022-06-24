@@ -1,3 +1,4 @@
+import 'package:app_openponic/common/colors/openponic_color.dart';
 import 'package:app_openponic/features/home/controller/home/home_controller.dart';
 import 'package:app_openponic/features/home/controller/home/home_controller_state.dart';
 import 'package:app_openponic/features/home/models/flowerbad_model.dart';
@@ -5,6 +6,7 @@ import 'package:app_openponic/features/home/widgets/grid_cards_home_widget.dart'
 import 'package:app_openponic/features/home/widgets/header_home_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePageScreen extends ConsumerStatefulWidget {
   const HomePageScreen({Key? key}) : super(key: key);
@@ -64,7 +66,42 @@ class _HomePageScreenState extends ConsumerState<HomePageScreen>
           ),
         );
       },
-      error: (err, stack) => const SizedBox.shrink(),
+      error: (err, stack) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Ops! Algo deu errado...',
+              style: GoogleFonts.montserrat(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 15.0,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {});
+              },
+              style: ElevatedButton.styleFrom(
+                primary: OpenponicColor.green,
+              ),
+              child: const Text(
+                'Tentar novamente',
+                style: TextStyle(fontSize: 18.0),
+              ),
+            ),
+            const SizedBox(
+              height: 15.0,
+            ),
+            Image.asset(
+              'assets/image/error_ilustration.png',
+              height: 300.0,
+            ),
+          ],
+        );
+      },
       loading: () => const Center(
         child: SizedBox.square(
           dimension: 50.0,
