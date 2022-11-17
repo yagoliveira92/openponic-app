@@ -30,7 +30,7 @@ class BottomBarWidget extends StatelessWidget {
               size: 22.0,
             ),
           ),
-          label: 'Previsão',
+          label: 'Histórico',
         ),
         BottomNavigationBarItem(
           icon: Padding(

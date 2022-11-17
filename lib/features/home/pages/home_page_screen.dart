@@ -2,7 +2,6 @@ import 'package:app_openponic/common/colors/openponic_color.dart';
 import 'package:app_openponic/features/home/controller/home/home_controller.dart';
 import 'package:app_openponic/features/home/controller/home/home_controller_state.dart';
 import 'package:app_openponic/features/home/models/flowerbad_model.dart';
-import 'package:app_openponic/features/home/widgets/grid_cards_home_widget.dart';
 import 'package:app_openponic/features/home/widgets/header_home_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -50,8 +49,49 @@ class _HomePageScreenState extends ConsumerState<HomePageScreen>
                         selectedFlowerbad: state.flowerbedSelected.nome,
                       ),
                     ),
-                    GridCardsHomeWidget(
-                      sensors: state.flowerbedSelected.sensors,
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 20,
+                        left: 80,
+                        right: 80,
+                      ),
+                      child: Card(
+                        elevation: 5,
+                        child: Container(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              const Text(
+                                'Tensão (V)',
+                                style: TextStyle(
+                                  fontSize: 22.0,
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Image.asset(
+                                    'assets/image/voltage.jpg',
+                                    height: 110.0,
+                                  ),
+                                  Text(
+                                    '${state.flowerbedSelected.sensors[1].value}',
+                                    style: GoogleFonts.montserrat(
+                                      textStyle: const TextStyle(
+                                        fontSize: 25.0,
+                                        fontFamily: 'Roboto',
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

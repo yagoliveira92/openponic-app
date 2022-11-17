@@ -104,8 +104,8 @@ class HeaderHomeWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/image/openponic_logo.png',
-                    height: 80.0,
+                    'assets/image/openponic_logo.jpg',
+                    height: 95.0,
                   ),
                   const SizedBox(
                     height: 65.0,
@@ -131,7 +131,7 @@ class HeaderHomeWidget extends StatelessWidget {
                           height: 5.0,
                         ),
                         Text(
-                          'Produtor',
+                          'Usuário',
                           style: GoogleFonts.montserrat(
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold,

@@ -25,12 +25,6 @@ class LoginScreen extends ConsumerWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(next.errorMessage),
-            action: SnackBarAction(
-              label: 'Undo',
-              onPressed: () {
-                // Some code to undo the change.
-              },
-            ),
           ),
         );
       }
@@ -57,7 +51,7 @@ class LoginScreen extends ConsumerWidget {
                       height: 35.0,
                     ),
                     const Text(
-                      'Seja bem vindo!',
+                      'Seja bem-vindo!',
                       style: TextStyle(
                         fontSize: 25.0,
                       ),

@@ -34,8 +34,8 @@ class SettingsRepository implements ISettingsRepository {
       ),
       ParameterModel(
         name: 'condutividade',
-        value:
-            double.tryParse(prefs.getString('condutividade') ?? '2.5') ?? 2.5,
+        value: double.tryParse(prefs.getString('condutividade') ?? '725.0') ??
+            725.0,
       ),
       ParameterModel(
         name: 'temperatura',

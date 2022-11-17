@@ -70,7 +70,7 @@ class SettingsScreen extends ConsumerWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Produtor',
+                              'Usuário',
                               style: GoogleFonts.montserrat(
                                 textStyle: const TextStyle(
                                   fontSize: 18,
